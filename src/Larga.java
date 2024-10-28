@@ -4,6 +4,9 @@ public class Larga extends Arma implements Comparable  {
     private int nivelArma;
     private boolean tieneSello;
 
+
+
+
     public Larga(int cantMuniciones, double alcance, String marca, int calibre, String estado, Policia policia,
                  String justifUso, int nivelArma, boolean tieneSello)
     {
@@ -52,8 +55,11 @@ public class Larga extends Arma implements Comparable  {
         {
             sello = ", no tiene el sello del RENAR";
         }
+
+
+
         return super.toString() + "El arma es larga se usa porque: " + justifUso + ", tiene un nivel: " + nivelArma + "\n " +
-                  sello + "y pertenece al policía " + policia.toString();
+                  sello + " y pertenece al policía " + policia.toString() + "\n ";
     }
 
 }
