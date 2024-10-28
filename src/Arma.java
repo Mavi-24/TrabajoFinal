@@ -21,7 +21,7 @@ public abstract class Arma {
     }
 
     public boolean enCondicion() {
-        return estado.equals("EN USO") && calibre >= 9;
+        return estado.equalsIgnoreCase("EN USO") && calibre >= 9;
     }
 
 
