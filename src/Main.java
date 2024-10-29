@@ -54,7 +54,16 @@ public class Main {
 
                     for (int i = 0; i <= listaCorta.size()-1; i++) {
 
-                        System.out.println("Arma corta numero "+ (i+1) + ": "+ listaCorta.get(i).toString());
+                        if(listaCorta.get(i).enCondicion() == true) {
+                            System.out.println("Arma corta numero " + (i + 1) + ": " + listaCorta.get(i).toString()
+                            + " y SI esta en condiciones");
+                        }else
+                        {
+
+                                System.out.println("Arma corta numero " + (i + 1) + ": " + listaCorta.get(i).toString()
+                                        + " y NO esta en condiciones");
+
+                        }
 
                     }
                     MenuOpciones();
@@ -63,9 +72,18 @@ public class Main {
 
                 System.out.println("Hay "+ listaLarga.size()+ " arma/s largas: \n");
 
-                for (int i = 0; i <= listaLarga.size()-1; i++) {
+                for (int i = 0; i <= listaLarga.size()-1; i++)
+                {
+                    if(listaLarga.get(i).enCondicion() == true) {
 
-                        System.out.println("Arma larga numero "+ (i+1) + ": "+ listaLarga.get(i).toString());
+                        System.out.println("Arma larga numero " + (i + 1) + ": " + listaLarga.get(i).toString()
+                        + " y SI esta en condiciones de ser usada");
+                    }
+                    else
+                    {
+                        System.out.println("Arma larga numero " + (i + 1) + ": " + listaLarga.get(i).toString()
+                                + " y NO esta en condiciones de ser usada");
+                    }
                 }
                 MenuOpciones();
 
@@ -277,8 +295,14 @@ public class Main {
         listaLarga.add(new Larga(calibre, alcance, marca, calibre, estado, policia, justificacion1, nivelArma1, tieneSello1));
 
         //System.out.println(listaLarga.get(listaLarga.size()-1));
+         if(listaLarga.getLast().enCondicion() == true)
+         {
 
-        System.out.println("ARMA INGRESADA: \n " +listaLarga.getLast().toString());
+             System.out.println("ARMA INGRESADA: \n " + listaLarga.getLast().toString() + " y SI esta en condiciones de ser usada");
+         }
+         else {
+             System.out.println("ARMA INGRESADA: \n " + listaLarga.getLast().toString() + " y NO esta en condiciones de ser usada");
+         }
 
         MenuOpciones();
 
